@@ -18,20 +18,20 @@ const App = () => {
 
   return (
     <>
-      <div className='continer flex flex-wrap'>
-        <h1>News App</h1>
+      <div className='continer flex flex-wrap justify-center'>
+        <h1 className=''>News App</h1>
         {
-          articles.map((article) => {
+          articles.map((article, index) => {
             return (
-              <div className='w-52'>
+              <div className='w-52' index={index}>
                 {
                   article.urlToImage != null ?
                     <img className='rounded w-36' src={article.urlToImage} alt="" />
                     :
                     <img className='rounded w-36' src={noImg} alt="" />
                 }
-                <h2>{article.title}</h2>
-                <h3 className='text-blue-500 font-semibold'>{'Auther : ' + article.author}</h3>
+                <h2 className='hover:underline'><a href="">{article.title}</a></h2>
+                <h3 className='text-orange-500 font-semibold'>{'Auther : ' + article.author}</h3>
                 {/* <p>{article.description}</p> */}
               </div>
             )
